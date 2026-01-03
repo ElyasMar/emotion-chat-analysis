@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  flask-api:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+    environment:
+      - FLASK_ENV=production
+      - MODEL_PATH=/app/models
+    command: python deployment/flask_app.py
+    restart: unless-stopped
+
+  streamlit-ui:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+    environment:
+      - FLASK_API_URL=http://flask-api:5000
+    command: streamlit run deployment/streamlit_app.py --server.address=0.0.0.0
+    depends_on:
+      - flask-api
+    restart: unless-stopped
