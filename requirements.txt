@@ -2,7 +2,7 @@
 numpy==1.24.3
 pandas==2.0.3
 scikit-learn==1.3.0
-torch==2.0.1
+# torch installed separately (CPU-only)
 transformers==4.30.2
 
 # Data Loading
@@ -38,71 +38,3 @@ pytest==7.4.0
 
 # Production
 gunicorn==21.2.0
-```
-
-#### `.gitignore`
-```
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-ENV/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Jupyter Notebook
-.ipynb_checkpoints
-*.ipynb_checkpoints
-
-# Model files (large files)
-models/*.pkl
-models/*.h5
-models/*.pt
-models/*.pth
-models/*.bin
-!models/.gitkeep
-
-# Data
-data/*.csv
-data/*.json
-data/*.parquet
-!data/.gitkeep
-
-# Environment
-.env
-.venv
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-logs/
-
-# Cache
-.cache/
-*.cache
