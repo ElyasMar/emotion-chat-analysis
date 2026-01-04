@@ -16,7 +16,7 @@ In today's digital communication era, understanding the emotional context behind
 - **Content Moderation**: Platforms must identify emotionally charged content (anger, disgust) that may violate community guidelines
 - **Human-Computer Interaction**: Chatbots and virtual assistants need emotional intelligence to respond appropriately
 
-### Our Solution
+### Solution
 
 This project implements an **Emotion-Aware Chat Analysis System** that:
 
